@@ -312,8 +312,13 @@ Filesystem level
 - C: / D: / E:
 - / /var /data
 
+NSG
+- subnet
+- individual vnic (VM)
 
 
+redeem badge:
+https://docs.microsoft.com/users/me/achievements?redeem=6RLYP7&WT.mc_id=ilt_partner_webpage_wwl&ocid=4675229
 
 
 
