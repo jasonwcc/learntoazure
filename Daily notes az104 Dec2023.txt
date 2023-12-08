@@ -1,0 +1,331 @@
+Wifi SSID:  Trainocate 5
+Password : TrainocatE
+
+
+Task 1 - Step 5 - Add Subnet
+- IP space: 10.40.0.0/22
+- default subnet : 10.40.0.0/24
+- another subnet : 10.40.1.0/24
+
+Task 2 - Step 4 : prompt password to be assigned to vm0, vm1
+- Passw0rd
+
+Task 4 - Step 15 VM's password
+- RDP into VM, prompt - Passw0rd
+
+Task 6 - Step 2
+- prompt custom domain 
+- jason20231206.com
+
+
+
+virtual network gw  : VPN peering/express route
+virtual network : vnet
+internet :  0.0.0.0/0
+virtual appliance : IP of VM (Fortinet/ symantec)
+
+
+github.com/jasonwcc/learntoazure/PDFs
+
+
+
+Disk type
+- NL-SAS/SATA - HDD (rpm)
+- SAS-SSD (milisecondk)
+- NVMe-SSD (microsecond)
+
+Block-based (SAN)
+- raw device/disk (partition > format > mount/map)
+- structural data type
+- Fiber Channel (FC)
+- iSCSI (IP over ethernet)
+- FCoE (FC + ethernet)
+- NVMeoFC / NVMeoTCP
+
+File-based (NAS)
+- Network File Sharing (unix/linux)
+- Common Internet File System (windows)
+  CIFS/ SMB(protocol)
+
+Object-based (upload/download)
+- immutable (edit direct)
+- unstructural data type
+- Azure container / Azure Blob
+- ideally to store video,audio
+- designed scalable (exabyte)
+
+SQL (RDBMS)
+- Parent-to-child
+  Customer place multiple 
+vs
+NON-SQL (non relationship)
+
+Kubernetes cluster
+- Docker Containerized (web, db, email)
+
+IaaS (VM)
+- user can customized 
+  - OS / app
+  - backup/replication
+
+Azure Storage Services
+- hybrid = PaaS + SaaS
+
+Multi-Region
+
+Region
+- zone (DC) 1
+  -- Fault Domain(FD) + Update Domain(UD)
+- zone 2
+  -- Fault Domain(FD) + Update Domain(UD)
+- zone 3
+
+
+Azure Blob
+- something like S3 (object-based)
+- do not have versioning,
+- do lifecycle management
+  
+
+Virtual Machine (IaaS)
+- Infrastructure aaS 
+  - fully customize (vcpu, ram, disk, networking, OS , application, runtime)
+- option dedicated host
+- 10xVM (100 vcpu, 100 G ram, 100Tb disk)
+  - boot, %
+  - shutdown (disk, static)
+- Pay as you go 
+
+Platform aaS (PaaS)
+- bring ur codes (java, python, php, nodejs, .net)
+- runs ur code and get result
+- fully managed (default)
+- autoscaling
+  -- scale down to zero
+
+Sw aaS 
+- azurecharts.com
+
+cpu / processors
+- 10 x physical cores
+- cores (2.x-6.x GHz)
+
+VM
+- vCPU (threads)
+
+Intel / AMD (CISC)
+- 1 core = 2 threads( logical cpu)
+- GPU / hw accelerator
+
+ARM (RISC) IBM POWER  / Oracle SPARC
+- 1 core = 8 threads
+
+Middleware
+- Web Logic 
+- IBM WebSphare
+- RedHat JBOSS
+
+NGINX/APACHE/JAVA
+SAP HANA (in memory DB)
+ 
+DB (disk - NVMe SSD)
+CRM
+
+Spot instances/VM
+- run for 24hours
+- 90% discounted
+- preemptively
+
+normal instances
+- 1000 vcpu
+- 804 vcpu normal instance
+- 198 vcpu spot instance (3 hours)
+
+NetApp SPOT - k8s
+
+
+
+Physical host1
+- VM1 DB (live migration)
+
+- VM2 email  ( live migration)
+  -- migration script/process
+
+Azure Enginer
+- host1 crash
+
+Physical host2
+- VM1
+
+Availability Zone
+- VMs are replicated zones (DC)
+- still within same region
+Availability Set
+- VMs are replicated across FD (rack/server)
+- still within same zone
+VM Scale Set
+- autoscaling
+-
+
+LB
+- rules/proxy
+Backend pool1
+- 3 VMs in SG
+
+
+
+
+
+
+open source code 
+- open
+- change
+- re-distribute
+
+closed source
+- FOC
+
+JENKINS / Spinnaker (Netflix)
+CI/CD platform
+continous integration / continuous deployment/delivery
+
+Configuration can change 
+Image change (OS+APP+RUNTIME+dependencies)  
+
+google 
+- cgroup (linux)
+  -- control resources to process
+docker 2014
+- 2015 open container initiative (OCI)
+- container (ephemeral) - short live / small / Lightweight
+
+Windows 11
+- Docker Desktop
+- WSL
+  - Linux --> podman/docker run container
+
+Oracle
+- Linux --> podman/docker run container
+
+RHEL
+- podman
+- subscription
+- ubi (RH image - )
+    --> subscription (support - update/upgrade)
+
+K8s kubernetes
+- container orchestration (lots of automation)
+
+containerized application
+- web, db, email
+
+what kind of application not suitable to be containerized?
+- hardware specific - diagnotics / dumping
+- memory hunger SAPHANA /Oracle
+- closed source
+
+POD
+Container
+- Image (OS,application, runtime, dependencies)
+- Process
+
+
+
+devops,ci/cd
+
+
+podman build -t jason-ubuntu:v1 -f abcfile
+
+
+
+
+
+
+
+
+
+Cluster 
+- Node Pool 1
+  - nodes (100xintel cpu, 10gb memory, disk, network)
+- Node Pool 2
+  - nodes (100xAMD cpu)
+
+DEPLOYMENT (YAML)
+- desired replicas/pods = 5
+- related pods (,pod4,...
+POD1 - node1
+- container1 - web
+POD2 - node2
+- container2 - db
+POD3 - node3 
+- container3 - email
+POd4 - node4
+- container1 - web
+POD5
+...
+...
+POD 1000
+
+shutdown/restart/update/upgrade
+
+
+
+Backend pool2
+- 5 VMs in US
+
+
+
+
+BCnDR
+- backup (frequecy/schedule/retention)
+- DR
+- tape, snapshot (Point in time/Copy on write), full, incremental forever, differential
+- RPO recovery point objective
+  : amount of data in time acceptable to lose 
+  : snapshot, backup, 
+- RTO recovery time objective: 
+  : between time that declared disaster and the user reconnect to DR site
+
+azurecharts.com
+
+MARS
+- windows
+- not application aware
+MABS
+- windows + linux
+- application aware
+- files/folders/volumes(file system)
+snapshot
+- from disk (managed)
+  -- OS / data
+
+Backup
+
+
+Crash consistency
+- VM (OS+appl+runtiem+datae)
+
+Application Consistency
+- workload (SAP HANA, Ms SQL, Exchange
+
+Filesystem level
+- C: / D: / E:
+- / /var /data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
